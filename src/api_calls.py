@@ -1,3 +1,4 @@
+import requests
 from alpaca.data import StockBarsRequest
 from alpaca.data.historical import StockHistoricalDataClient
 from alpaca.data.timeframe import TimeFrame
@@ -19,6 +20,19 @@ def call_alpaca(symbols: [], timeframe: TimeFrame, start: str, end: str):
     )
     call = StockHistoricalDataClient.get_stock_bars(api, request_params)
     return call
+
+
+def call_alpha_vantage_news(symbol: str):
+    # ... code to call alphavantage api
+    api_key = config.alphavantage_api_key
+    url = 'https://www.alphavantage.co/query?function=NEWS_SENTIMENT' + \
+          '&tickers=' + symbol + \
+          '&apikey=' + api_key + \
+          '&limit=200'
+    r = requests.get(url)
+    data = r.json()
+
+    return data
 
 
 def call_newsapi(symbol: str, start: str, end: str):
