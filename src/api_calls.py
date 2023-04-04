@@ -22,7 +22,7 @@ def call_news(symbol: str, limit: int = 200):
     url = api_url + '?function=NEWS_SENTIMENT' + \
           '&tickers=' + symbol + \
           '&apikey=' + api_key + \
-          '&limit=' + limit
+          '&limit=' + str(limit)
     r = requests.get(url)
     data = r.json()
 
