@@ -1,4 +1,5 @@
 import csv
+
 import requests
 
 import config
@@ -94,79 +95,3 @@ def call_listings():
     my_list = list(cr)
 
     return my_list
-
-
-def call_earnings(symbol: str):
-    # ... code to call alphavantage api
-    url = api_url + '?function=EARNINGS' + \
-          '&symbol=' + symbol + \
-          '&apikey=' + api_key
-    r = requests.get(url)
-    data = r.json()
-
-    return data
-
-
-def call_simplemovingaverage(symbol: str, interval: str, time_period: int, series_type: str):
-    # ... code to call alphavantage api
-    url = api_url + '?function=SMA' + \
-          '&symbol=' + symbol + \
-          '&interval=' + interval + \
-          '&time_period=' + str(time_period) + \
-          '&series_type=' + series_type + \
-          '&apikey=' + api_key
-    r = requests.get(url)
-    data = r.json()
-
-    return data
-
-
-def call_vwap(symbol: str, interval: str):
-    # ... code to call alphavantage api
-    url = api_url + '?function=VWAP' + \
-          '&symbol=' + symbol + \
-          '&interval=' + interval + \
-          '&apikey=' + api_key
-    r = requests.get(url)
-    data = r.json()
-
-    return data
-
-
-def call_stoch(symbol: str, interval: str):
-    # ... code to call alphavantage api
-    url = api_url + '?function=STOCH' + \
-          '&symbol=' + symbol + \
-          '&interval=' + interval + \
-          '&apikey=' + api_key
-    r = requests.get(url)
-    data = r.json()
-
-    return data
-
-
-def call_rsi(symbol: str, interval: str, time_period: int, series_type: str):
-    # ... code to call alphavantage api
-    url = api_url + '?function=RSI' + \
-          '&symbol=' + symbol + \
-          '&interval=' + interval + \
-          '&time_period=' + str(time_period) + \
-          '&series_type=' + series_type + \
-          '&apikey=' + api_key
-    r = requests.get(url)
-    data = r.json()
-
-    return data
-
-
-def call_adx(symbol: str, interval: str, time_period: int):
-    # ... code to call alphavantage api
-    url = api_url + '?function=ADX' + \
-          '&symbol=' + symbol + \
-          '&interval=' + interval + \
-          '&time_period=' + str(time_period) + \
-          '&apikey=' + api_key
-    r = requests.get(url)
-    data = r.json()
-
-    return data
