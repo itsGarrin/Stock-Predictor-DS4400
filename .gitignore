@@ -127,5 +127,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-/src/config.py
+/src/csv/config.py
 /src/progress.csv
